@@ -57,6 +57,26 @@ function prevImage() {
   }
   thumbMob.src = `./images/image-product-${currentImg}.jpg`;
 }
+// women
+function nextImage() {
+  if (currentImg == 4) {
+    currentImg = 1;
+  } else {
+    currentImg++;
+  }
+  thumbMob.src = `./images/shoe${currentImg}.webp`;
+}
+
+function prevImage() {
+  if (currentImg == 1) {
+    currentImg = 4;
+  } else {
+    currentImg--;
+  }
+  thumbMob.src = `./images/shoe${currentImg}.webp`;
+  
+}
+
 function toggleCart() {
   cart.classList.toggle("invisible");
 }
@@ -103,7 +123,6 @@ images.forEach((image) => {
       case "./images/image-product-1-thumbnail.jpg":
         mainThumbnail.src = "./images/image-product-1.jpg";
         mainThumbnailLightBox.src = "./images/image-product-1.jpg";
-        break;
       case "./images/image-product-2-thumbnail.jpg":
         mainThumbnail.src = "./images/image-product-2.jpg";
         mainThumbnailLightBox.src = "./images/image-product-2.jpg";
@@ -117,8 +136,32 @@ images.forEach((image) => {
         mainThumbnailLightBox.src = "./images/image-product-4.jpg";
         break;
     }
+
+    switch (selectedImg.getAttribute("src")) {
+      case "./images/shoe1.webpp":
+        mainThumbnail.src = "../images/shoe1.webp";
+        mainThumbnailLightBox.src = "./images/shoe1.webp";
+      case "./images/shoe2.webp":
+        mainThumbnail.src = "./images/shoe2.webp";
+        mainThumbnailLightBox.src = "./images/shoe2.webp";
+        break;
+      case "./images/shoe3.webp":
+        mainThumbnail.src = "./images/shoe3.webp";
+        mainThumbnailLightBox.src = "./images/shoe3.webp";
+        break;
+      case "./images/shoe4.webp":
+        mainThumbnail.src = "./images/shoe4.webp";
+        mainThumbnailLightBox.src = "./images/shoe4.webp";
+        break;
+        case "./images/shoe1.webpp":
+        mainThumbnail.src = "../images/shoe1.webp";
+        mainThumbnailLightBox.src = "./images/shoe1.webp";
+        break;
+    }
   });
 });
+
+
 
 menuBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
